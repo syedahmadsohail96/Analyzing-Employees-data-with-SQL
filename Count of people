@@ -1,0 +1,4 @@
+SELECT COUNT(1)
+FROM employees
+WHERE employees.startdate >= '2008-07-01'
+AND (employees.enddate >= '2009-07-01' OR employees.enddate IS NULL)
