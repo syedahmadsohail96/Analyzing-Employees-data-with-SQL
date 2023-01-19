@@ -1,0 +1,8 @@
+SELECT dates.datekey , employees.startdate, employees.enddate, count(1)
+FROM employees cross join dates
+WHERE dates.datekey >= employees.startdate
+AND (dates.datekey <= employees.enddate
+    OR 
+    employees.enddate is NULL)
+GROUP BY dates.datekey , employees.startdate, employees.enddate
+ORDER BY dates.datekey
