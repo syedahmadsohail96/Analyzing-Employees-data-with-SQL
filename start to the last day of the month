@@ -1,0 +1,7 @@
+SELECT 
+    dates.datekey
+    date_trunc(dates.datekey, "month") month,
+    DATE_ADD(DATE_TRUNC(dates.datekey, "month"), 1, "month" ) next_month,
+    date_add(DATE_ADD(DATE_TRUNC(dates.datekey, "month"), 1, "month" ), -1, "day") eomonth
+FROM dates
+LIMIT 10;
